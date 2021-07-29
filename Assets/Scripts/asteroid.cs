@@ -14,6 +14,8 @@ using UnityEngine;
         public enum AsteroidSize { small, medium, large }
         public AsteroidSize size;
 
+        private Vector3 maxVelocity = new Vector3(100, 100, 0);
+
         //Camera is used to calculate screen-based positions.
         private Camera mainCamera;
 
@@ -31,6 +33,7 @@ using UnityEngine;
         // Start is called before the first frame update
         void Start()
         {
+            //myRigidbody.velocity = Vector3.ClampMagnitude(maxVelocity, 100);
             //Populates components that must be populated at Start.
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
             mainCamera = Camera.main;
@@ -91,8 +94,8 @@ using UnityEngine;
         public void addForce()
         {
             //Gives random values for force to apply to asteroid.
-            xForce = Random.Range(-100, 100)*3;
-            yForce = Random.Range(-100, 100)*3;
+            xForce = Random.Range(-100, 100);
+            yForce = Random.Range(-100, 100);
 
             //Adds force to asteroid based on random values which causes asteroids to move around level.
             myRigidbody.AddForce(xForce, yForce, 0, ForceMode.Force);
@@ -109,10 +112,16 @@ using UnityEngine;
             if (size == AsteroidSize.large)
             {
                 gameManager.spawnAsteroid(this.transform.position, 2, AsteroidSize.medium);
+                gameManager.scorePoints(20);
             }
             if (size == AsteroidSize.medium)
             {
                 gameManager.spawnAsteroid(this.transform.position, 2, AsteroidSize.small);
+                gameManager.scorePoints(10);
+            }
+            if (size == AsteroidSize.small)
+            {
+                gameManager.scorePoints(5);
             }
             Destroy(boom, 1.99f);
             Destroy(this.gameObject);

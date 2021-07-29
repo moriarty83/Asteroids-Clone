@@ -23,6 +23,8 @@ public class GameOverState : State
         if (Input.GetMouseButtonDown(0))
         {
             GameManager.level = 1;
+            GameManager.score = 0;
+            GameManager.lives = 3;
             GameManager.SetState(new BeginState(GameManager));
         }
         yield break;

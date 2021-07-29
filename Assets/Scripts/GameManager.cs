@@ -16,6 +16,7 @@ public class GameManager : StateMachine
 
     public bool alive = true;
     public int lives = 3;
+    public int score = 0;
 
     public Text gameText;
 
@@ -84,6 +85,11 @@ public class GameManager : StateMachine
             return mainCamera.ViewportToWorldPoint(screenPos);
         }
 
+    }
+
+    public void scorePoints(int points)
+    {
+        score += points;
     }
 
 

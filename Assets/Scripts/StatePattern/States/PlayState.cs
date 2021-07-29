@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayState : State
 {
     public PlayState(GameManager gameManager) : base(gameManager)
     {
     }
 
+    private Text scoreAndLives;
+
     public override IEnumerator Enter()
     {
+        scoreAndLives = GameObject.Find("ScoreAndLives").GetComponent<Text>();
         Debug.Log("Play state");
         positionShips(GameManager.ships, GameManager.mainCamera);
         spawnAsteroids(GameManager.level);
@@ -20,6 +23,8 @@ public class PlayState : State
     {
         controlShips();
         checkEndPlay();
+        scoreAndLives.text = "Score: " + GameManager.score + "\n" +
+            "Lives: " + GameManager.lives;
         yield return new WaitForEndOfFrame();
         
 
