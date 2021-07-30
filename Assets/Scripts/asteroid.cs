@@ -94,8 +94,8 @@ using UnityEngine;
         public void addForce()
         {
             //Gives random values for force to apply to asteroid.
-            xForce = Random.Range(-100, 100);
-            yForce = Random.Range(-100, 100);
+            xForce = Random.Range(-200, 200);
+            yForce = Random.Range(-200, 200);
 
             //Adds force to asteroid based on random values which causes asteroids to move around level.
             myRigidbody.AddForce(xForce, yForce, 0, ForceMode.Force);
@@ -122,6 +122,8 @@ using UnityEngine;
             if (size == AsteroidSize.small)
             {
                 gameManager.scorePoints(5);
+                gameManager.spawnPickup(this.transform.position);
+                
             }
             Destroy(boom, 1.99f);
             Destroy(this.gameObject);

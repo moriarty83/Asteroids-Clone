@@ -636,44 +636,55 @@
     <Reference Include="Boo.Lang">
       <HintPath>/Applications/Unity/Hub/Editor/2019.4.1f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.TestRunner">
-      <HintPath>/Users/chris/OneDrive/Unity/Astroids Clone/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TestRunner">
-      <HintPath>/Users/chris/OneDrive/Unity/Astroids Clone/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>/Users/chris/OneDrive/Unity/Astroids Clone/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-      <HintPath>/Users/chris/OneDrive/Unity/Astroids Clone/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/chris/OneDrive/Unity/Astroids Clone/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>/Users/chris/OneDrive/Unity/Astroids Clone/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>/Users/chris/OneDrive/Unity/Astroids Clone/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>/Users/chris/OneDrive/Unity/Astroids Clone/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>/Users/chris/OneDrive/Unity/Astroids Clone/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/chris/OneDrive/Unity/Astroids Clone/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>/Users/chris/OneDrive/Unity/Astroids Clone/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{E49ACB6C-CBC5-DC17-2C81-43C78A235FCA}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.TestRunner.csproj">
+      <Project>{4BCD8CB7-1A9D-5FE9-EC5D-686241309566}</Project>
+      <Name>UnityEditor.TestRunner</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.TestRunner.csproj">
+      <Project>{0AFD73AC-B99F-FB9A-DE9A-CFB7D35466CD}</Project>
+      <Name>UnityEngine.TestRunner</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.Editor.csproj">
+      <Project>{55F67B51-01F0-8E74-9472-2CC4C2EBAE20}</Project>
+      <Name>Unity.Timeline.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VSCode.Editor.csproj">
+      <Project>{FBAC591B-1625-ADEC-0487-55A78AFF1E0F}</Project>
+      <Name>Unity.VSCode.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
+      <Project>{566729E9-C705-4D42-BCF2-9AC26B2ED721}</Project>
+      <Name>Unity.TextMeshPro.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{730D7E10-334C-78AC-F80D-32FA63FE46F3}</Project>
+      <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.csproj">
+      <Project>{1288FD2B-FA1F-4055-D55F-8E7E4E499734}</Project>
+      <Name>Unity.Timeline</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.CollabProxy.Editor.csproj">
+      <Project>{3F14BB7B-A6B5-061D-BCC6-2B3180049344}</Project>
+      <Name>Unity.CollabProxy.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Rider.Editor.csproj">
+      <Project>{F4C0E832-5C8D-91EA-13C3-AB9EE87F123A}</Project>
+      <Name>Unity.Rider.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.csproj">
+      <Project>{602A53EB-9A2F-A794-31B4-799BCE6BD2DA}</Project>
+      <Name>Unity.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{D5EDB209-45DB-E5C1-0490-AA6A9A642C13}</Project>
+      <Name>UnityEditor.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

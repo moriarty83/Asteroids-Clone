@@ -667,6 +667,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5866398007641559503, guid: 13cbee626c7414f54b414b2e11c8a37e,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13cbee626c7414f54b414b2e11c8a37e, type: 3}
 --- !u!1001 &1128829222
@@ -868,6 +873,8 @@ MonoBehaviour:
   lives: 3
   score: 0
   gameText: {fileID: 1408125169}
+  pickup1up: {fileID: 8640136568137910804, guid: 652ce698483384103bd4232d13669563,
+    type: 3}
 --- !u!4 &1187994736
 Transform:
   m_ObjectHideFlags: 0

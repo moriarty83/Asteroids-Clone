@@ -9,22 +9,37 @@ public class PlayState : State
     }
 
     private Text scoreAndLives;
+    private float spawnTimer = 0;
+    private float totalAsteroids;
+    private int totalSpawned = 0;
 
     public override IEnumerator Enter()
     {
+        totalAsteroids = GameManager.level;
         scoreAndLives = GameObject.Find("ScoreAndLives").GetComponent<Text>();
         Debug.Log("Play state");
         positionShips(GameManager.ships, GameManager.mainCamera);
-        spawnAsteroids(GameManager.level);
+        //spawnAsteroids(GameManager.level);
         yield break;    
     }
 
     public override IEnumerator UpdateState()
     {
         controlShips();
-        checkEndPlay();
+        
         scoreAndLives.text = "Score: " + GameManager.score + "\n" +
             "Lives: " + GameManager.lives;
+
+        
+        if (spawnTimer <= 0 && totalSpawned < totalAsteroids)
+        {
+            spawnAsteroids();
+            totalSpawned += 1;
+            spawnTimer = 2;
+        }
+
+        spawnTimer -= Time.deltaTime;
+        checkEndPlay();
         yield return new WaitForEndOfFrame();
         
 

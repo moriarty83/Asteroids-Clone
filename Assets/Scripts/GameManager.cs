@@ -20,6 +20,8 @@ public class GameManager : StateMachine
 
     public Text gameText;
 
+    public GameObject pickup1up;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -92,8 +94,16 @@ public class GameManager : StateMachine
         score += points;
     }
 
+    public void spawnPickup(Vector3 spawnPos)
+    {
+        if(Random.Range(1,2) == 1)
+        {
+            GameObject pickup = GameObject.Instantiate(pickup1up);
+            pickup.transform.position = spawnPos;
+        }
 
 
+    }
 
 }
 
