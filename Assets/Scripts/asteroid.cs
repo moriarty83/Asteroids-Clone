@@ -130,5 +130,14 @@ using UnityEngine;
 
         }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "ship")
+        {
+            collision.gameObject.GetComponent<shipController>().explodeMe();
+        }
     }
+
+
+}
 

@@ -46,4 +46,18 @@ public class PickUp : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    //Detects collision with Trigger (ships are only things with triggers)
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Hit trigger");
+        pickMeUp();
+    }
+
+    public void pickMeUp()
+    {
+            gameManager.lives += 1;
+            Destroy(this.gameObject);
+    }
+    
 }

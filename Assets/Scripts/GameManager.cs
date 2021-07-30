@@ -100,6 +100,7 @@ public class GameManager : StateMachine
         {
             GameObject pickup = GameObject.Instantiate(pickup1up);
             pickup.transform.position = spawnPos;
+            asteroids.Add(pickup);
         }
 
 

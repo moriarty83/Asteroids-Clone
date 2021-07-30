@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class laser : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +21,17 @@ public class laser : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
 
-        Debug.Log(collision);
+        Debug.Log(collision.gameObject);
 
         if (collision.gameObject.tag == "Asteroid")
         {
             collision.gameObject.GetComponent<asteroid>().explodeMe();
             Destroy(this.gameObject);
 
+        }
+        if (collision.gameObject.tag == "1up")
+        {
+            Destroy(this.gameObject);
         }
 
     }

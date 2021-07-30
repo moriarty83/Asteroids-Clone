@@ -24,7 +24,7 @@ public class ContinueState : State
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log("Return Pressed");
+
             GameManager.alive = true;
             GameManager.gameText.enabled = false;
             GameManager.SetState(new PlayState(GameManager));
@@ -34,7 +34,6 @@ public class ContinueState : State
 
     public override IEnumerator Exit()
     {
-        Debug.Log("exiting continue");
 
         yield break;
     }

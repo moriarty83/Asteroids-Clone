@@ -12,6 +12,7 @@ public class shipController : MonoBehaviour
     public GameObject laserEmitter;
 
     public GameObject explosion;
+    public AudioSource laserSource;
 
     private GameManager gameManager;
 
@@ -48,6 +49,7 @@ public class shipController : MonoBehaviour
         {
             return;
         }
+        laserSource.Play();
         GameObject laser = GameObject.Instantiate(laserPrefab);
         
         laser.transform.position = this.transform.position;
@@ -131,13 +133,9 @@ public class shipController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-
         if (collision.gameObject.tag == "Asteroid")
         {
             explodeMe();
         }
-
     }
-
-
 }

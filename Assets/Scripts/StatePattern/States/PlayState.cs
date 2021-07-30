@@ -15,6 +15,7 @@ public class PlayState : State
 
     public override IEnumerator Enter()
     {
+        destroyAllAsteroids();
         totalAsteroids = GameManager.level;
         scoreAndLives = GameObject.Find("ScoreAndLives").GetComponent<Text>();
         Debug.Log("Play state");
@@ -54,8 +55,35 @@ public class PlayState : State
 
     public void spawnAsteroids(int spawnNumber = 1, asteroid.AsteroidSize size = asteroid.AsteroidSize.large)
     {
+        
+
+
+        GameObject newAsteroid;
+
+        if (size == asteroid.AsteroidSize.small)
+        {
+            newAsteroid = GameObject.Instantiate(GameManager.asteroidPrefabs[0]);
+        }
+        else if (size == asteroid.AsteroidSize.medium)
+        {
+            newAsteroid = GameObject.Instantiate(GameManager.asteroidPrefabs[1]);
+        }
+        else
+        {
+            newAsteroid = GameObject.Instantiate(GameManager.asteroidPrefabs[2]);
+        }
+
+        newAsteroid.transform.position = GameManager.calculateSpawnPos();
+        GameManager.asteroids.Add(newAsteroid);
+
+        
+
+    }
+
+    public void destroyAllAsteroids()
+    {
         Debug.Log(GameManager.asteroids.Count);
-        for (int i = GameManager.asteroids.Count-1; i >= 0; i--)
+        for (int i = GameManager.asteroids.Count - 1; i >= 0; i--)
         {
             Debug.Log(GameManager.asteroids[i]);
             GameObject.Destroy(GameManager.asteroids[i]);
@@ -63,30 +91,7 @@ public class PlayState : State
         }
 
         GameManager.asteroids = new List<GameObject>();
-        int numberSpanwed = 0;
-
-        while (numberSpanwed < spawnNumber)
-        {
-            GameObject newAsteroid;
-
-            if (size == asteroid.AsteroidSize.small)
-            {
-                newAsteroid = GameObject.Instantiate(GameManager.asteroidPrefabs[0]);
-            }
-            else if (size == asteroid.AsteroidSize.medium)
-            {
-                newAsteroid = GameObject.Instantiate(GameManager.asteroidPrefabs[1]);
-            }
-            else
-            {
-                newAsteroid = GameObject.Instantiate(GameManager.asteroidPrefabs[2]);
-            }
-
-            newAsteroid.transform.position = GameManager.calculateSpawnPos();
-            GameManager.asteroids.Add(newAsteroid);
-            numberSpanwed += 1;
-        }
-
+        totalSpawned = 0;
     }
 
     private void checkEndPlay()
