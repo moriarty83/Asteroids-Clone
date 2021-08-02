@@ -16,6 +16,8 @@ public class shipController : MonoBehaviour
 
     private GameManager gameManager;
 
+    public ParticleSystem engineGlow;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,15 @@ public class shipController : MonoBehaviour
             FireLaser();
         }
 
+        if (Input.GetKey(KeyCode.W))
+        {
+            engineGlow.Play();
+        }
+        else
+        {
+            engineGlow.Stop();
+        }
+
 
 
 
@@ -44,14 +55,24 @@ public class shipController : MonoBehaviour
 
     public void FireLaser()
     {
+        // Adds recoil effect to ship.
+        myRigidbody.AddRelativeForce(Vector3.back * 1, ForceMode.VelocityChange);
+
+
+        // Checks to see if the front of ship is in view, it not no laser will fire.
         Vector3 emitterPos = mainCamera.WorldToViewportPoint(laserEmitter.transform.position);
         if (emitterPos.x > 1 || emitterPos.x < 0 || emitterPos.y > 1 || emitterPos.y < 0)
         {
             return;
         }
+
+        // Laser sound
         laserSource.Play();
+
+        // Instantiastes laser
         GameObject laser = GameObject.Instantiate(laserPrefab);
-        
+
+        // Sets laser position, rotation, parent and adds force.
         laser.transform.position = this.transform.position;
         laser.transform.eulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y, this.transform.eulerAngles.z);
         laser.transform.SetParent(GameObject.Find("LaserParent").transform);

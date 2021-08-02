@@ -96,7 +96,7 @@ public class GameManager : StateMachine
 
     public void spawnPickup(Vector3 spawnPos)
     {
-        if(Random.Range(1,2) == 1)
+        if(Random.Range(1,8) == 1)
         {
             GameObject pickup = GameObject.Instantiate(pickup1up);
             pickup.transform.position = spawnPos;
