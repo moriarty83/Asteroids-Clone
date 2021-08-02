@@ -18,7 +18,6 @@ public class PlayState : State
         destroyAllAsteroids();
         totalAsteroids = GameManager.level;
         scoreAndLives = GameObject.Find("ScoreAndLives").GetComponent<Text>();
-        Debug.Log("Play state");
         positionShips(GameManager.ships, GameManager.mainCamera);
         //spawnAsteroids(GameManager.level);
         yield break;    
@@ -82,10 +81,8 @@ public class PlayState : State
 
     public void destroyAllAsteroids()
     {
-        Debug.Log(GameManager.asteroids.Count);
         for (int i = GameManager.asteroids.Count - 1; i >= 0; i--)
         {
-            Debug.Log(GameManager.asteroids[i]);
             GameObject.Destroy(GameManager.asteroids[i]);
             GameManager.asteroids.Remove(GameManager.asteroids[i]);
         }

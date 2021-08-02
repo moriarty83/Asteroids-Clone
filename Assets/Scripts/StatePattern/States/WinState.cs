@@ -13,7 +13,6 @@ public class WinState : State
     public override IEnumerator Enter()
     {
         GameManager.gameText.enabled = true;
-        Debug.Log("you've won!");
         GameManager.gameText.text = "You Completed Level " + GameManager.level + "!\n\n" +
             "Press Return to Continue";
 

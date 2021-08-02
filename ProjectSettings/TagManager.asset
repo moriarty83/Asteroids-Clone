@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shootable
+  - Asteroid
+  - Rock
+  - Ship
+  - Laser
+  - 1up
   layers:
   - Default
   - TransparentFX
